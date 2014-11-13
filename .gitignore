@@ -1,0 +1,65 @@
+### LibreSSL ###
+# Top level excludes
+.deps
+.dirstamp
+.libs
+/libtool
+*/Makefile.bak
+*Makefile
+/MINFO
+/*.pc
+*.status
+/rehash.time
+/inc.*
+/makefile.*
+/out.*
+/tmp.*
+*.trs
+*.log
+
+# Executables
+/apps/openssl
+/tests/*test
+/tests/aes_wrap
+/tests/explicit_bzero
+/tests/mont
+/tests/timingsafe
+
+
+### Linux ###
+*~
+
+# KDE directory preferences
+.directory
+
+
+### C ###
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
