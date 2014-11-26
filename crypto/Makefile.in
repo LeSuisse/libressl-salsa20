@@ -342,36 +342,37 @@ am_libcrypto_la_OBJECTS = libcrypto_la-cpt_err.lo \
 	evp/libcrypto_la-e_idea.lo evp/libcrypto_la-e_null.lo \
 	evp/libcrypto_la-e_old.lo evp/libcrypto_la-e_rc2.lo \
 	evp/libcrypto_la-e_rc4.lo evp/libcrypto_la-e_rc4_hmac_md5.lo \
-	evp/libcrypto_la-e_xcbc_d.lo evp/libcrypto_la-encode.lo \
-	evp/libcrypto_la-evp_aead.lo evp/libcrypto_la-evp_enc.lo \
-	evp/libcrypto_la-evp_err.lo evp/libcrypto_la-evp_key.lo \
-	evp/libcrypto_la-evp_lib.lo evp/libcrypto_la-evp_pbe.lo \
-	evp/libcrypto_la-evp_pkey.lo evp/libcrypto_la-m_dss.lo \
-	evp/libcrypto_la-m_dss1.lo evp/libcrypto_la-m_ecdsa.lo \
-	evp/libcrypto_la-m_md4.lo evp/libcrypto_la-m_md5.lo \
-	evp/libcrypto_la-m_mdc2.lo evp/libcrypto_la-m_null.lo \
-	evp/libcrypto_la-m_ripemd.lo evp/libcrypto_la-m_sha.lo \
-	evp/libcrypto_la-m_sha1.lo evp/libcrypto_la-m_sigver.lo \
-	evp/libcrypto_la-m_wp.lo evp/libcrypto_la-names.lo \
-	evp/libcrypto_la-p5_crpt.lo evp/libcrypto_la-p5_crpt2.lo \
-	evp/libcrypto_la-p_dec.lo evp/libcrypto_la-p_enc.lo \
-	evp/libcrypto_la-p_lib.lo evp/libcrypto_la-p_open.lo \
-	evp/libcrypto_la-p_seal.lo evp/libcrypto_la-p_sign.lo \
-	evp/libcrypto_la-p_verify.lo evp/libcrypto_la-pmeth_fn.lo \
-	evp/libcrypto_la-pmeth_gn.lo evp/libcrypto_la-pmeth_lib.lo \
-	hmac/libcrypto_la-hm_ameth.lo hmac/libcrypto_la-hm_pmeth.lo \
-	hmac/libcrypto_la-hmac.lo idea/libcrypto_la-i_cbc.lo \
-	idea/libcrypto_la-i_cfb64.lo idea/libcrypto_la-i_ecb.lo \
-	idea/libcrypto_la-i_ofb64.lo idea/libcrypto_la-i_skey.lo \
-	krb5/libcrypto_la-krb5_asn.lo lhash/libcrypto_la-lh_stats.lo \
-	lhash/libcrypto_la-lhash.lo md4/libcrypto_la-md4_dgst.lo \
-	md4/libcrypto_la-md4_one.lo md5/libcrypto_la-md5_dgst.lo \
-	md5/libcrypto_la-md5_one.lo mdc2/libcrypto_la-mdc2_one.lo \
-	mdc2/libcrypto_la-mdc2dgst.lo modes/libcrypto_la-cbc128.lo \
-	modes/libcrypto_la-ccm128.lo modes/libcrypto_la-cfb128.lo \
-	modes/libcrypto_la-ctr128.lo modes/libcrypto_la-cts128.lo \
-	modes/libcrypto_la-gcm128.lo modes/libcrypto_la-ofb128.lo \
-	modes/libcrypto_la-xts128.lo objects/libcrypto_la-o_names.lo \
+	evp/libcrypto_la-e_salsa20.lo evp/libcrypto_la-e_xcbc_d.lo \
+	evp/libcrypto_la-encode.lo evp/libcrypto_la-evp_aead.lo \
+	evp/libcrypto_la-evp_enc.lo evp/libcrypto_la-evp_err.lo \
+	evp/libcrypto_la-evp_key.lo evp/libcrypto_la-evp_lib.lo \
+	evp/libcrypto_la-evp_pbe.lo evp/libcrypto_la-evp_pkey.lo \
+	evp/libcrypto_la-m_dss.lo evp/libcrypto_la-m_dss1.lo \
+	evp/libcrypto_la-m_ecdsa.lo evp/libcrypto_la-m_md4.lo \
+	evp/libcrypto_la-m_md5.lo evp/libcrypto_la-m_mdc2.lo \
+	evp/libcrypto_la-m_null.lo evp/libcrypto_la-m_ripemd.lo \
+	evp/libcrypto_la-m_sha.lo evp/libcrypto_la-m_sha1.lo \
+	evp/libcrypto_la-m_sigver.lo evp/libcrypto_la-m_wp.lo \
+	evp/libcrypto_la-names.lo evp/libcrypto_la-p5_crpt.lo \
+	evp/libcrypto_la-p5_crpt2.lo evp/libcrypto_la-p_dec.lo \
+	evp/libcrypto_la-p_enc.lo evp/libcrypto_la-p_lib.lo \
+	evp/libcrypto_la-p_open.lo evp/libcrypto_la-p_seal.lo \
+	evp/libcrypto_la-p_sign.lo evp/libcrypto_la-p_verify.lo \
+	evp/libcrypto_la-pmeth_fn.lo evp/libcrypto_la-pmeth_gn.lo \
+	evp/libcrypto_la-pmeth_lib.lo hmac/libcrypto_la-hm_ameth.lo \
+	hmac/libcrypto_la-hm_pmeth.lo hmac/libcrypto_la-hmac.lo \
+	idea/libcrypto_la-i_cbc.lo idea/libcrypto_la-i_cfb64.lo \
+	idea/libcrypto_la-i_ecb.lo idea/libcrypto_la-i_ofb64.lo \
+	idea/libcrypto_la-i_skey.lo krb5/libcrypto_la-krb5_asn.lo \
+	lhash/libcrypto_la-lh_stats.lo lhash/libcrypto_la-lhash.lo \
+	md4/libcrypto_la-md4_dgst.lo md4/libcrypto_la-md4_one.lo \
+	md5/libcrypto_la-md5_dgst.lo md5/libcrypto_la-md5_one.lo \
+	mdc2/libcrypto_la-mdc2_one.lo mdc2/libcrypto_la-mdc2dgst.lo \
+	modes/libcrypto_la-cbc128.lo modes/libcrypto_la-ccm128.lo \
+	modes/libcrypto_la-cfb128.lo modes/libcrypto_la-ctr128.lo \
+	modes/libcrypto_la-cts128.lo modes/libcrypto_la-gcm128.lo \
+	modes/libcrypto_la-ofb128.lo modes/libcrypto_la-xts128.lo \
+	objects/libcrypto_la-o_names.lo \
 	objects/libcrypto_la-obj_dat.lo \
 	objects/libcrypto_la-obj_err.lo \
 	objects/libcrypto_la-obj_lib.lo \
@@ -416,13 +417,13 @@ am_libcrypto_la_OBJECTS = libcrypto_la-cpt_err.lo \
 	rsa/libcrypto_la-rsa_pmeth.lo rsa/libcrypto_la-rsa_prn.lo \
 	rsa/libcrypto_la-rsa_pss.lo rsa/libcrypto_la-rsa_saos.lo \
 	rsa/libcrypto_la-rsa_sign.lo rsa/libcrypto_la-rsa_ssl.lo \
-	rsa/libcrypto_la-rsa_x931.lo sha/libcrypto_la-sha1_one.lo \
-	sha/libcrypto_la-sha1dgst.lo sha/libcrypto_la-sha256.lo \
-	sha/libcrypto_la-sha512.lo sha/libcrypto_la-sha_dgst.lo \
-	sha/libcrypto_la-sha_one.lo stack/libcrypto_la-stack.lo \
-	ts/libcrypto_la-ts_asn1.lo ts/libcrypto_la-ts_conf.lo \
-	ts/libcrypto_la-ts_err.lo ts/libcrypto_la-ts_lib.lo \
-	ts/libcrypto_la-ts_req_print.lo \
+	rsa/libcrypto_la-rsa_x931.lo salsa20/libcrypto_la-salsa20.lo \
+	sha/libcrypto_la-sha1_one.lo sha/libcrypto_la-sha1dgst.lo \
+	sha/libcrypto_la-sha256.lo sha/libcrypto_la-sha512.lo \
+	sha/libcrypto_la-sha_dgst.lo sha/libcrypto_la-sha_one.lo \
+	stack/libcrypto_la-stack.lo ts/libcrypto_la-ts_asn1.lo \
+	ts/libcrypto_la-ts_conf.lo ts/libcrypto_la-ts_err.lo \
+	ts/libcrypto_la-ts_lib.lo ts/libcrypto_la-ts_req_print.lo \
 	ts/libcrypto_la-ts_req_utils.lo \
 	ts/libcrypto_la-ts_rsp_print.lo ts/libcrypto_la-ts_rsp_sign.lo \
 	ts/libcrypto_la-ts_rsp_utils.lo \
@@ -758,55 +759,55 @@ libcrypto_la_SOURCES = cpt_err.c cryptlib.c cversion.c ex_data.c \
 	evp/e_aes_cbc_hmac_sha1.c evp/e_bf.c evp/e_cast.c \
 	evp/e_chacha.c evp/e_chacha20poly1305.c evp/e_des.c \
 	evp/e_des3.c evp/e_idea.c evp/e_null.c evp/e_old.c evp/e_rc2.c \
-	evp/e_rc4.c evp/e_rc4_hmac_md5.c evp/e_xcbc_d.c evp/encode.c \
-	evp/evp_aead.c evp/evp_enc.c evp/evp_err.c evp/evp_key.c \
-	evp/evp_lib.c evp/evp_pbe.c evp/evp_pkey.c evp/m_dss.c \
-	evp/m_dss1.c evp/m_ecdsa.c evp/m_md4.c evp/m_md5.c \
-	evp/m_mdc2.c evp/m_null.c evp/m_ripemd.c evp/m_sha.c \
-	evp/m_sha1.c evp/m_sigver.c evp/m_wp.c evp/names.c \
-	evp/p5_crpt.c evp/p5_crpt2.c evp/p_dec.c evp/p_enc.c \
-	evp/p_lib.c evp/p_open.c evp/p_seal.c evp/p_sign.c \
-	evp/p_verify.c evp/pmeth_fn.c evp/pmeth_gn.c evp/pmeth_lib.c \
-	hmac/hm_ameth.c hmac/hm_pmeth.c hmac/hmac.c idea/i_cbc.c \
-	idea/i_cfb64.c idea/i_ecb.c idea/i_ofb64.c idea/i_skey.c \
-	krb5/krb5_asn.c lhash/lh_stats.c lhash/lhash.c md4/md4_dgst.c \
-	md4/md4_one.c md5/md5_dgst.c md5/md5_one.c mdc2/mdc2_one.c \
-	mdc2/mdc2dgst.c modes/cbc128.c modes/ccm128.c modes/cfb128.c \
-	modes/ctr128.c modes/cts128.c modes/gcm128.c modes/ofb128.c \
-	modes/xts128.c objects/o_names.c objects/obj_dat.c \
-	objects/obj_err.c objects/obj_lib.c objects/obj_xref.c \
-	ocsp/ocsp_asn.c ocsp/ocsp_cl.c ocsp/ocsp_err.c ocsp/ocsp_ext.c \
-	ocsp/ocsp_ht.c ocsp/ocsp_lib.c ocsp/ocsp_prn.c ocsp/ocsp_srv.c \
-	ocsp/ocsp_vfy.c pem/pem_all.c pem/pem_err.c pem/pem_info.c \
-	pem/pem_lib.c pem/pem_oth.c pem/pem_pk8.c pem/pem_pkey.c \
-	pem/pem_seal.c pem/pem_sign.c pem/pem_x509.c pem/pem_xaux.c \
-	pem/pvkfmt.c pkcs12/p12_add.c pkcs12/p12_asn.c \
-	pkcs12/p12_attr.c pkcs12/p12_crpt.c pkcs12/p12_crt.c \
-	pkcs12/p12_decr.c pkcs12/p12_init.c pkcs12/p12_key.c \
-	pkcs12/p12_kiss.c pkcs12/p12_mutl.c pkcs12/p12_npas.c \
-	pkcs12/p12_p8d.c pkcs12/p12_p8e.c pkcs12/p12_utl.c \
-	pkcs12/pk12err.c pkcs7/bio_pk7.c pkcs7/pk7_asn1.c \
-	pkcs7/pk7_attr.c pkcs7/pk7_doit.c pkcs7/pk7_lib.c \
-	pkcs7/pk7_mime.c pkcs7/pk7_smime.c pkcs7/pkcs7err.c \
-	poly1305/poly1305.c rand/rand_err.c rand/rand_lib.c \
-	rand/randfile.c rc2/rc2_cbc.c rc2/rc2_ecb.c rc2/rc2_skey.c \
-	rc2/rc2cfb64.c rc2/rc2ofb64.c rc4/rc4_enc.c rc4/rc4_skey.c \
-	ripemd/rmd_dgst.c ripemd/rmd_one.c rsa/rsa_ameth.c \
-	rsa/rsa_asn1.c rsa/rsa_chk.c rsa/rsa_crpt.c rsa/rsa_depr.c \
-	rsa/rsa_eay.c rsa/rsa_err.c rsa/rsa_gen.c rsa/rsa_lib.c \
-	rsa/rsa_none.c rsa/rsa_oaep.c rsa/rsa_pk1.c rsa/rsa_pmeth.c \
-	rsa/rsa_prn.c rsa/rsa_pss.c rsa/rsa_saos.c rsa/rsa_sign.c \
-	rsa/rsa_ssl.c rsa/rsa_x931.c sha/sha1_one.c sha/sha1dgst.c \
-	sha/sha256.c sha/sha512.c sha/sha_dgst.c sha/sha_one.c \
-	stack/stack.c ts/ts_asn1.c ts/ts_conf.c ts/ts_err.c \
-	ts/ts_lib.c ts/ts_req_print.c ts/ts_req_utils.c \
-	ts/ts_rsp_print.c ts/ts_rsp_sign.c ts/ts_rsp_utils.c \
-	ts/ts_rsp_verify.c ts/ts_verify_ctx.c txt_db/txt_db.c \
-	ui/ui_err.c ui/ui_lib.c ui/ui_openssl.c ui/ui_util.c \
-	whrlpool/wp_block.c whrlpool/wp_dgst.c x509/by_dir.c \
-	x509/by_file.c x509/x509_att.c x509/x509_cmp.c x509/x509_d2.c \
-	x509/x509_def.c x509/x509_err.c x509/x509_ext.c x509/x509_lu.c \
-	x509/x509_obj.c x509/x509_r2x.c x509/x509_req.c \
+	evp/e_rc4.c evp/e_rc4_hmac_md5.c evp/e_salsa20.c \
+	evp/e_xcbc_d.c evp/encode.c evp/evp_aead.c evp/evp_enc.c \
+	evp/evp_err.c evp/evp_key.c evp/evp_lib.c evp/evp_pbe.c \
+	evp/evp_pkey.c evp/m_dss.c evp/m_dss1.c evp/m_ecdsa.c \
+	evp/m_md4.c evp/m_md5.c evp/m_mdc2.c evp/m_null.c \
+	evp/m_ripemd.c evp/m_sha.c evp/m_sha1.c evp/m_sigver.c \
+	evp/m_wp.c evp/names.c evp/p5_crpt.c evp/p5_crpt2.c \
+	evp/p_dec.c evp/p_enc.c evp/p_lib.c evp/p_open.c evp/p_seal.c \
+	evp/p_sign.c evp/p_verify.c evp/pmeth_fn.c evp/pmeth_gn.c \
+	evp/pmeth_lib.c hmac/hm_ameth.c hmac/hm_pmeth.c hmac/hmac.c \
+	idea/i_cbc.c idea/i_cfb64.c idea/i_ecb.c idea/i_ofb64.c \
+	idea/i_skey.c krb5/krb5_asn.c lhash/lh_stats.c lhash/lhash.c \
+	md4/md4_dgst.c md4/md4_one.c md5/md5_dgst.c md5/md5_one.c \
+	mdc2/mdc2_one.c mdc2/mdc2dgst.c modes/cbc128.c modes/ccm128.c \
+	modes/cfb128.c modes/ctr128.c modes/cts128.c modes/gcm128.c \
+	modes/ofb128.c modes/xts128.c objects/o_names.c \
+	objects/obj_dat.c objects/obj_err.c objects/obj_lib.c \
+	objects/obj_xref.c ocsp/ocsp_asn.c ocsp/ocsp_cl.c \
+	ocsp/ocsp_err.c ocsp/ocsp_ext.c ocsp/ocsp_ht.c ocsp/ocsp_lib.c \
+	ocsp/ocsp_prn.c ocsp/ocsp_srv.c ocsp/ocsp_vfy.c pem/pem_all.c \
+	pem/pem_err.c pem/pem_info.c pem/pem_lib.c pem/pem_oth.c \
+	pem/pem_pk8.c pem/pem_pkey.c pem/pem_seal.c pem/pem_sign.c \
+	pem/pem_x509.c pem/pem_xaux.c pem/pvkfmt.c pkcs12/p12_add.c \
+	pkcs12/p12_asn.c pkcs12/p12_attr.c pkcs12/p12_crpt.c \
+	pkcs12/p12_crt.c pkcs12/p12_decr.c pkcs12/p12_init.c \
+	pkcs12/p12_key.c pkcs12/p12_kiss.c pkcs12/p12_mutl.c \
+	pkcs12/p12_npas.c pkcs12/p12_p8d.c pkcs12/p12_p8e.c \
+	pkcs12/p12_utl.c pkcs12/pk12err.c pkcs7/bio_pk7.c \
+	pkcs7/pk7_asn1.c pkcs7/pk7_attr.c pkcs7/pk7_doit.c \
+	pkcs7/pk7_lib.c pkcs7/pk7_mime.c pkcs7/pk7_smime.c \
+	pkcs7/pkcs7err.c poly1305/poly1305.c rand/rand_err.c \
+	rand/rand_lib.c rand/randfile.c rc2/rc2_cbc.c rc2/rc2_ecb.c \
+	rc2/rc2_skey.c rc2/rc2cfb64.c rc2/rc2ofb64.c rc4/rc4_enc.c \
+	rc4/rc4_skey.c ripemd/rmd_dgst.c ripemd/rmd_one.c \
+	rsa/rsa_ameth.c rsa/rsa_asn1.c rsa/rsa_chk.c rsa/rsa_crpt.c \
+	rsa/rsa_depr.c rsa/rsa_eay.c rsa/rsa_err.c rsa/rsa_gen.c \
+	rsa/rsa_lib.c rsa/rsa_none.c rsa/rsa_oaep.c rsa/rsa_pk1.c \
+	rsa/rsa_pmeth.c rsa/rsa_prn.c rsa/rsa_pss.c rsa/rsa_saos.c \
+	rsa/rsa_sign.c rsa/rsa_ssl.c rsa/rsa_x931.c salsa20/salsa20.c \
+	sha/sha1_one.c sha/sha1dgst.c sha/sha256.c sha/sha512.c \
+	sha/sha_dgst.c sha/sha_one.c stack/stack.c ts/ts_asn1.c \
+	ts/ts_conf.c ts/ts_err.c ts/ts_lib.c ts/ts_req_print.c \
+	ts/ts_req_utils.c ts/ts_rsp_print.c ts/ts_rsp_sign.c \
+	ts/ts_rsp_utils.c ts/ts_rsp_verify.c ts/ts_verify_ctx.c \
+	txt_db/txt_db.c ui/ui_err.c ui/ui_lib.c ui/ui_openssl.c \
+	ui/ui_util.c whrlpool/wp_block.c whrlpool/wp_dgst.c \
+	x509/by_dir.c x509/by_file.c x509/x509_att.c x509/x509_cmp.c \
+	x509/x509_d2.c x509/x509_def.c x509/x509_err.c x509/x509_ext.c \
+	x509/x509_lu.c x509/x509_obj.c x509/x509_r2x.c x509/x509_req.c \
 	x509/x509_set.c x509/x509_trs.c x509/x509_txt.c x509/x509_v3.c \
 	x509/x509_vfy.c x509/x509_vpm.c x509/x509cset.c \
 	x509/x509name.c x509/x509rset.c x509/x509spki.c \
@@ -823,7 +824,7 @@ libcrypto_la_SOURCES = cpt_err.c cryptlib.c cversion.c ex_data.c \
 	x509v3/v3_prn.c x509v3/v3_purp.c x509v3/v3_skey.c \
 	x509v3/v3_sxnet.c x509v3/v3_utl.c x509v3/v3err.c
 EXTRA_libcrypto_la_SOURCES = des/ncbc_enc.c chacha/chacha-merged.c \
-	poly1305/poly1305-donna.c
+	poly1305/poly1305-donna.c salsa20/salsa20-merged.c
 all: all-am
 
 .SUFFIXES:
@@ -1651,6 +1652,8 @@ evp/libcrypto_la-e_rc4.lo: evp/$(am__dirstamp) \
 	evp/$(DEPDIR)/$(am__dirstamp)
 evp/libcrypto_la-e_rc4_hmac_md5.lo: evp/$(am__dirstamp) \
 	evp/$(DEPDIR)/$(am__dirstamp)
+evp/libcrypto_la-e_salsa20.lo: evp/$(am__dirstamp) \
+	evp/$(DEPDIR)/$(am__dirstamp)
 evp/libcrypto_la-e_xcbc_d.lo: evp/$(am__dirstamp) \
 	evp/$(DEPDIR)/$(am__dirstamp)
 evp/libcrypto_la-encode.lo: evp/$(am__dirstamp) \
@@ -2045,6 +2048,14 @@ rsa/libcrypto_la-rsa_ssl.lo: rsa/$(am__dirstamp) \
 	rsa/$(DEPDIR)/$(am__dirstamp)
 rsa/libcrypto_la-rsa_x931.lo: rsa/$(am__dirstamp) \
 	rsa/$(DEPDIR)/$(am__dirstamp)
+salsa20/$(am__dirstamp):
+	@$(MKDIR_P) salsa20
+	@: > salsa20/$(am__dirstamp)
+salsa20/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) salsa20/$(DEPDIR)
+	@: > salsa20/$(DEPDIR)/$(am__dirstamp)
+salsa20/libcrypto_la-salsa20.lo: salsa20/$(am__dirstamp) \
+	salsa20/$(DEPDIR)/$(am__dirstamp)
 sha/$(am__dirstamp):
 	@$(MKDIR_P) sha
 	@: > sha/$(am__dirstamp)
@@ -2265,6 +2276,8 @@ chacha/libcrypto_la-chacha-merged.lo: chacha/$(am__dirstamp) \
 	chacha/$(DEPDIR)/$(am__dirstamp)
 poly1305/libcrypto_la-poly1305-donna.lo: poly1305/$(am__dirstamp) \
 	poly1305/$(DEPDIR)/$(am__dirstamp)
+salsa20/libcrypto_la-salsa20-merged.lo: salsa20/$(am__dirstamp) \
+	salsa20/$(DEPDIR)/$(am__dirstamp)
 
 libcrypto.la: $(libcrypto_la_OBJECTS) $(libcrypto_la_DEPENDENCIES) $(EXTRA_libcrypto_la_DEPENDENCIES) 
 	$(AM_V_CCLD)$(libcrypto_la_LINK) -rpath $(libdir) $(libcrypto_la_OBJECTS) $(libcrypto_la_LIBADD) $(LIBS)
@@ -2353,6 +2366,8 @@ mostlyclean-compile:
 	-rm -f ripemd/*.lo
 	-rm -f rsa/*.$(OBJEXT)
 	-rm -f rsa/*.lo
+	-rm -f salsa20/*.$(OBJEXT)
+	-rm -f salsa20/*.lo
 	-rm -f sha/*.$(OBJEXT)
 	-rm -f sha/*.lo
 	-rm -f stack/*.$(OBJEXT)
@@ -2689,6 +2704,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@evp/$(DEPDIR)/libcrypto_la-e_rc2.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@evp/$(DEPDIR)/libcrypto_la-e_rc4.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@evp/$(DEPDIR)/libcrypto_la-e_rc4_hmac_md5.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@evp/$(DEPDIR)/libcrypto_la-e_salsa20.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@evp/$(DEPDIR)/libcrypto_la-e_xcbc_d.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@evp/$(DEPDIR)/libcrypto_la-encode.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@evp/$(DEPDIR)/libcrypto_la-evp_aead.Plo@am__quote@
@@ -2830,6 +2846,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@rsa/$(DEPDIR)/libcrypto_la-rsa_sign.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@rsa/$(DEPDIR)/libcrypto_la-rsa_ssl.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@rsa/$(DEPDIR)/libcrypto_la-rsa_x931.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@salsa20/$(DEPDIR)/libcrypto_la-salsa20-merged.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@salsa20/$(DEPDIR)/libcrypto_la-salsa20.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@sha/$(DEPDIR)/libcrypto_la-sha1_one.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@sha/$(DEPDIR)/libcrypto_la-sha1dgst.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@sha/$(DEPDIR)/libcrypto_la-sha256.Plo@am__quote@
@@ -5136,6 +5154,13 @@ evp/libcrypto_la-e_rc4_hmac_md5.lo: evp/e_rc4_hmac_md5.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -c -o evp/libcrypto_la-e_rc4_hmac_md5.lo `test -f 'evp/e_rc4_hmac_md5.c' || echo '$(srcdir)/'`evp/e_rc4_hmac_md5.c
 
+evp/libcrypto_la-e_salsa20.lo: evp/e_salsa20.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -MT evp/libcrypto_la-e_salsa20.lo -MD -MP -MF evp/$(DEPDIR)/libcrypto_la-e_salsa20.Tpo -c -o evp/libcrypto_la-e_salsa20.lo `test -f 'evp/e_salsa20.c' || echo '$(srcdir)/'`evp/e_salsa20.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) evp/$(DEPDIR)/libcrypto_la-e_salsa20.Tpo evp/$(DEPDIR)/libcrypto_la-e_salsa20.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='evp/e_salsa20.c' object='evp/libcrypto_la-e_salsa20.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -c -o evp/libcrypto_la-e_salsa20.lo `test -f 'evp/e_salsa20.c' || echo '$(srcdir)/'`evp/e_salsa20.c
+
 evp/libcrypto_la-e_xcbc_d.lo: evp/e_xcbc_d.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -MT evp/libcrypto_la-e_xcbc_d.lo -MD -MP -MF evp/$(DEPDIR)/libcrypto_la-e_xcbc_d.Tpo -c -o evp/libcrypto_la-e_xcbc_d.lo `test -f 'evp/e_xcbc_d.c' || echo '$(srcdir)/'`evp/e_xcbc_d.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) evp/$(DEPDIR)/libcrypto_la-e_xcbc_d.Tpo evp/$(DEPDIR)/libcrypto_la-e_xcbc_d.Plo
@@ -6116,6 +6141,13 @@ rsa/libcrypto_la-rsa_x931.lo: rsa/rsa_x931.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -c -o rsa/libcrypto_la-rsa_x931.lo `test -f 'rsa/rsa_x931.c' || echo '$(srcdir)/'`rsa/rsa_x931.c
 
+salsa20/libcrypto_la-salsa20.lo: salsa20/salsa20.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -MT salsa20/libcrypto_la-salsa20.lo -MD -MP -MF salsa20/$(DEPDIR)/libcrypto_la-salsa20.Tpo -c -o salsa20/libcrypto_la-salsa20.lo `test -f 'salsa20/salsa20.c' || echo '$(srcdir)/'`salsa20/salsa20.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) salsa20/$(DEPDIR)/libcrypto_la-salsa20.Tpo salsa20/$(DEPDIR)/libcrypto_la-salsa20.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='salsa20/salsa20.c' object='salsa20/libcrypto_la-salsa20.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -c -o salsa20/libcrypto_la-salsa20.lo `test -f 'salsa20/salsa20.c' || echo '$(srcdir)/'`salsa20/salsa20.c
+
 sha/libcrypto_la-sha1_one.lo: sha/sha1_one.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -MT sha/libcrypto_la-sha1_one.lo -MD -MP -MF sha/$(DEPDIR)/libcrypto_la-sha1_one.Tpo -c -o sha/libcrypto_la-sha1_one.lo `test -f 'sha/sha1_one.c' || echo '$(srcdir)/'`sha/sha1_one.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) sha/$(DEPDIR)/libcrypto_la-sha1_one.Tpo sha/$(DEPDIR)/libcrypto_la-sha1_one.Plo
@@ -6718,6 +6750,13 @@ poly1305/libcrypto_la-poly1305-donna.lo: poly1305/poly1305-donna.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -c -o poly1305/libcrypto_la-poly1305-donna.lo `test -f 'poly1305/poly1305-donna.c' || echo '$(srcdir)/'`poly1305/poly1305-donna.c
 
+salsa20/libcrypto_la-salsa20-merged.lo: salsa20/salsa20-merged.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -MT salsa20/libcrypto_la-salsa20-merged.lo -MD -MP -MF salsa20/$(DEPDIR)/libcrypto_la-salsa20-merged.Tpo -c -o salsa20/libcrypto_la-salsa20-merged.lo `test -f 'salsa20/salsa20-merged.c' || echo '$(srcdir)/'`salsa20/salsa20-merged.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) salsa20/$(DEPDIR)/libcrypto_la-salsa20-merged.Tpo salsa20/$(DEPDIR)/libcrypto_la-salsa20-merged.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='salsa20/salsa20-merged.c' object='salsa20/libcrypto_la-salsa20-merged.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcrypto_la_CFLAGS) $(CFLAGS) -c -o salsa20/libcrypto_la-salsa20-merged.lo `test -f 'salsa20/salsa20-merged.c' || echo '$(srcdir)/'`salsa20/salsa20-merged.c
+
 mostlyclean-libtool:
 	-rm -f *.lo
 
@@ -6764,6 +6803,7 @@ clean-libtool:
 	-rm -rf rc4/.libs rc4/_libs
 	-rm -rf ripemd/.libs ripemd/_libs
 	-rm -rf rsa/.libs rsa/_libs
+	-rm -rf salsa20/.libs salsa20/_libs
 	-rm -rf sha/.libs sha/_libs
 	-rm -rf stack/.libs stack/_libs
 	-rm -rf ts/.libs ts/_libs
@@ -6970,6 +7010,8 @@ distclean-generic:
 	-rm -f ripemd/$(am__dirstamp)
 	-rm -f rsa/$(DEPDIR)/$(am__dirstamp)
 	-rm -f rsa/$(am__dirstamp)
+	-rm -f salsa20/$(DEPDIR)/$(am__dirstamp)
+	-rm -f salsa20/$(am__dirstamp)
 	-rm -f sha/$(DEPDIR)/$(am__dirstamp)
 	-rm -f sha/$(am__dirstamp)
 	-rm -f stack/$(DEPDIR)/$(am__dirstamp)
@@ -6996,7 +7038,7 @@ clean-am: clean-generic clean-libLTLIBRARIES clean-libtool \
 	clean-noinstLTLIBRARIES mostlyclean-am
 
 distclean: distclean-am
-	-rm -rf ./$(DEPDIR) aes/$(DEPDIR) asn1/$(DEPDIR) bf/$(DEPDIR) bio/$(DEPDIR) bn/$(DEPDIR) buffer/$(DEPDIR) cast/$(DEPDIR) chacha/$(DEPDIR) cmac/$(DEPDIR) comp/$(DEPDIR) compat/$(DEPDIR) conf/$(DEPDIR) des/$(DEPDIR) dh/$(DEPDIR) dsa/$(DEPDIR) dso/$(DEPDIR) ec/$(DEPDIR) ecdh/$(DEPDIR) ecdsa/$(DEPDIR) engine/$(DEPDIR) err/$(DEPDIR) evp/$(DEPDIR) hmac/$(DEPDIR) idea/$(DEPDIR) krb5/$(DEPDIR) lhash/$(DEPDIR) md4/$(DEPDIR) md5/$(DEPDIR) mdc2/$(DEPDIR) modes/$(DEPDIR) objects/$(DEPDIR) ocsp/$(DEPDIR) pem/$(DEPDIR) pkcs12/$(DEPDIR) pkcs7/$(DEPDIR) poly1305/$(DEPDIR) rand/$(DEPDIR) rc2/$(DEPDIR) rc4/$(DEPDIR) ripemd/$(DEPDIR) rsa/$(DEPDIR) sha/$(DEPDIR) stack/$(DEPDIR) ts/$(DEPDIR) txt_db/$(DEPDIR) ui/$(DEPDIR) whrlpool/$(DEPDIR) x509/$(DEPDIR) x509v3/$(DEPDIR)
+	-rm -rf ./$(DEPDIR) aes/$(DEPDIR) asn1/$(DEPDIR) bf/$(DEPDIR) bio/$(DEPDIR) bn/$(DEPDIR) buffer/$(DEPDIR) cast/$(DEPDIR) chacha/$(DEPDIR) cmac/$(DEPDIR) comp/$(DEPDIR) compat/$(DEPDIR) conf/$(DEPDIR) des/$(DEPDIR) dh/$(DEPDIR) dsa/$(DEPDIR) dso/$(DEPDIR) ec/$(DEPDIR) ecdh/$(DEPDIR) ecdsa/$(DEPDIR) engine/$(DEPDIR) err/$(DEPDIR) evp/$(DEPDIR) hmac/$(DEPDIR) idea/$(DEPDIR) krb5/$(DEPDIR) lhash/$(DEPDIR) md4/$(DEPDIR) md5/$(DEPDIR) mdc2/$(DEPDIR) modes/$(DEPDIR) objects/$(DEPDIR) ocsp/$(DEPDIR) pem/$(DEPDIR) pkcs12/$(DEPDIR) pkcs7/$(DEPDIR) poly1305/$(DEPDIR) rand/$(DEPDIR) rc2/$(DEPDIR) rc4/$(DEPDIR) ripemd/$(DEPDIR) rsa/$(DEPDIR) salsa20/$(DEPDIR) sha/$(DEPDIR) stack/$(DEPDIR) ts/$(DEPDIR) txt_db/$(DEPDIR) ui/$(DEPDIR) whrlpool/$(DEPDIR) x509/$(DEPDIR) x509v3/$(DEPDIR)
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -7042,7 +7084,7 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-	-rm -rf ./$(DEPDIR) aes/$(DEPDIR) asn1/$(DEPDIR) bf/$(DEPDIR) bio/$(DEPDIR) bn/$(DEPDIR) buffer/$(DEPDIR) cast/$(DEPDIR) chacha/$(DEPDIR) cmac/$(DEPDIR) comp/$(DEPDIR) compat/$(DEPDIR) conf/$(DEPDIR) des/$(DEPDIR) dh/$(DEPDIR) dsa/$(DEPDIR) dso/$(DEPDIR) ec/$(DEPDIR) ecdh/$(DEPDIR) ecdsa/$(DEPDIR) engine/$(DEPDIR) err/$(DEPDIR) evp/$(DEPDIR) hmac/$(DEPDIR) idea/$(DEPDIR) krb5/$(DEPDIR) lhash/$(DEPDIR) md4/$(DEPDIR) md5/$(DEPDIR) mdc2/$(DEPDIR) modes/$(DEPDIR) objects/$(DEPDIR) ocsp/$(DEPDIR) pem/$(DEPDIR) pkcs12/$(DEPDIR) pkcs7/$(DEPDIR) poly1305/$(DEPDIR) rand/$(DEPDIR) rc2/$(DEPDIR) rc4/$(DEPDIR) ripemd/$(DEPDIR) rsa/$(DEPDIR) sha/$(DEPDIR) stack/$(DEPDIR) ts/$(DEPDIR) txt_db/$(DEPDIR) ui/$(DEPDIR) whrlpool/$(DEPDIR) x509/$(DEPDIR) x509v3/$(DEPDIR)
+	-rm -rf ./$(DEPDIR) aes/$(DEPDIR) asn1/$(DEPDIR) bf/$(DEPDIR) bio/$(DEPDIR) bn/$(DEPDIR) buffer/$(DEPDIR) cast/$(DEPDIR) chacha/$(DEPDIR) cmac/$(DEPDIR) comp/$(DEPDIR) compat/$(DEPDIR) conf/$(DEPDIR) des/$(DEPDIR) dh/$(DEPDIR) dsa/$(DEPDIR) dso/$(DEPDIR) ec/$(DEPDIR) ecdh/$(DEPDIR) ecdsa/$(DEPDIR) engine/$(DEPDIR) err/$(DEPDIR) evp/$(DEPDIR) hmac/$(DEPDIR) idea/$(DEPDIR) krb5/$(DEPDIR) lhash/$(DEPDIR) md4/$(DEPDIR) md5/$(DEPDIR) mdc2/$(DEPDIR) modes/$(DEPDIR) objects/$(DEPDIR) ocsp/$(DEPDIR) pem/$(DEPDIR) pkcs12/$(DEPDIR) pkcs7/$(DEPDIR) poly1305/$(DEPDIR) rand/$(DEPDIR) rc2/$(DEPDIR) rc4/$(DEPDIR) ripemd/$(DEPDIR) rsa/$(DEPDIR) salsa20/$(DEPDIR) sha/$(DEPDIR) stack/$(DEPDIR) ts/$(DEPDIR) txt_db/$(DEPDIR) ui/$(DEPDIR) whrlpool/$(DEPDIR) x509/$(DEPDIR) x509v3/$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

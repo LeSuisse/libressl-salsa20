@@ -1,4 +1,4 @@
-+AC_INIT([libressl], m4_esyscmd([tr -d '\n' < VERSION]))
++AC_INIT([libressl], 2.1.1)
 AC_CANONICAL_HOST
 AM_INIT_AUTOMAKE([subdir-objects])
 AC_CONFIG_MACRO_DIR([m4])
@@ -57,7 +57,7 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([])],
 )
 CFLAGS="$save_cflags $AM_CFLAGS"
 
-AC_CHECK_FUNC(strlcpy, 
+AC_CHECK_FUNC(strlcpy,
 	AM_CONDITIONAL(NO_STRLCPY, false),
 	AC_DEFINE(NO_STRLCPY)
 	AM_CONDITIONAL(NO_STRLCPY, true))

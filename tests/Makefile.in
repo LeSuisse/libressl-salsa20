@@ -90,10 +90,11 @@ TESTS = $(am__append_1) aes_wrap$(EXEEXT) asn1test$(EXEEXT) \
 	igetest$(EXEEXT) md4test$(EXEEXT) md5test$(EXEEXT) \
 	mdc2test$(EXEEXT) mont$(EXEEXT) pkcs7test$(EXEEXT) \
 	poly1305test$(EXEEXT) randtest$(EXEEXT) rc2test$(EXEEXT) \
-	rc4test$(EXEEXT) rmdtest$(EXEEXT) sha1test$(EXEEXT) \
-	sha256test$(EXEEXT) sha512test$(EXEEXT) shatest$(EXEEXT) \
-	timingsafe$(EXEEXT) utf8test$(EXEEXT) aeadtest.sh evptest.sh \
-	pq_test.sh ssltest.sh arc4randomforktest.sh
+	rc4test$(EXEEXT) rmdtest$(EXEEXT) salsa20test$(EXEEXT) \
+	sha1test$(EXEEXT) sha256test$(EXEEXT) sha512test$(EXEEXT) \
+	shatest$(EXEEXT) timingsafe$(EXEEXT) utf8test$(EXEEXT) \
+	aeadtest.sh evptest.sh pq_test.sh ssltest.sh \
+	arc4randomforktest.sh
 check_PROGRAMS = aeadtest$(EXEEXT) aes_wrap$(EXEEXT) \
 	arc4randomforktest$(EXEEXT) asn1test$(EXEEXT) \
 	base64test$(EXEEXT) bftest$(EXEEXT) biotest$(EXEEXT) \
@@ -107,9 +108,9 @@ check_PROGRAMS = aeadtest$(EXEEXT) aes_wrap$(EXEEXT) \
 	mont$(EXEEXT) pidwraptest$(EXEEXT) pkcs7test$(EXEEXT) \
 	poly1305test$(EXEEXT) pq_test$(EXEEXT) randtest$(EXEEXT) \
 	rc2test$(EXEEXT) rc4test$(EXEEXT) rmdtest$(EXEEXT) \
-	sha1test$(EXEEXT) sha256test$(EXEEXT) sha512test$(EXEEXT) \
-	shatest$(EXEEXT) ssltest$(EXEEXT) timingsafe$(EXEEXT) \
-	utf8test$(EXEEXT)
+	salsa20test$(EXEEXT) sha1test$(EXEEXT) sha256test$(EXEEXT) \
+	sha512test$(EXEEXT) shatest$(EXEEXT) ssltest$(EXEEXT) \
+	timingsafe$(EXEEXT) utf8test$(EXEEXT)
 @NO_ARC4RANDOM_BUF_FALSE@am__append_1 = pidwraptest.sh
 subdir = tests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -274,6 +275,10 @@ am_rmdtest_OBJECTS = rmdtest.$(OBJEXT)
 rmdtest_OBJECTS = $(am_rmdtest_OBJECTS)
 rmdtest_DEPENDENCIES = $(top_builddir)/ssl/libssl.la \
 	$(top_builddir)/crypto/libcrypto.la
+am_salsa20test_OBJECTS = salsa20test.$(OBJEXT)
+salsa20test_OBJECTS = $(am_salsa20test_OBJECTS)
+salsa20test_DEPENDENCIES = $(top_builddir)/ssl/libssl.la \
+	$(top_builddir)/crypto/libcrypto.la
 am_sha1test_OBJECTS = sha1test.$(OBJEXT)
 sha1test_OBJECTS = $(am_sha1test_OBJECTS)
 sha1test_DEPENDENCIES = $(top_builddir)/ssl/libssl.la \
@@ -349,9 +354,10 @@ SOURCES = $(aeadtest_SOURCES) $(aes_wrap_SOURCES) \
 	$(mdc2test_SOURCES) $(mont_SOURCES) $(pidwraptest_SOURCES) \
 	$(pkcs7test_SOURCES) $(poly1305test_SOURCES) \
 	$(pq_test_SOURCES) $(randtest_SOURCES) $(rc2test_SOURCES) \
-	$(rc4test_SOURCES) $(rmdtest_SOURCES) $(sha1test_SOURCES) \
-	$(sha256test_SOURCES) $(sha512test_SOURCES) $(shatest_SOURCES) \
-	$(ssltest_SOURCES) $(timingsafe_SOURCES) $(utf8test_SOURCES)
+	$(rc4test_SOURCES) $(rmdtest_SOURCES) $(salsa20test_SOURCES) \
+	$(sha1test_SOURCES) $(sha256test_SOURCES) \
+	$(sha512test_SOURCES) $(shatest_SOURCES) $(ssltest_SOURCES) \
+	$(timingsafe_SOURCES) $(utf8test_SOURCES)
 DIST_SOURCES = $(aeadtest_SOURCES) $(aes_wrap_SOURCES) \
 	$(arc4randomforktest_SOURCES) $(asn1test_SOURCES) \
 	$(base64test_SOURCES) $(bftest_SOURCES) $(biotest_SOURCES) \
@@ -365,9 +371,10 @@ DIST_SOURCES = $(aeadtest_SOURCES) $(aes_wrap_SOURCES) \
 	$(mdc2test_SOURCES) $(mont_SOURCES) $(pidwraptest_SOURCES) \
 	$(pkcs7test_SOURCES) $(poly1305test_SOURCES) \
 	$(pq_test_SOURCES) $(randtest_SOURCES) $(rc2test_SOURCES) \
-	$(rc4test_SOURCES) $(rmdtest_SOURCES) $(sha1test_SOURCES) \
-	$(sha256test_SOURCES) $(sha512test_SOURCES) $(shatest_SOURCES) \
-	$(ssltest_SOURCES) $(timingsafe_SOURCES) $(utf8test_SOURCES)
+	$(rc4test_SOURCES) $(rmdtest_SOURCES) $(salsa20test_SOURCES) \
+	$(sha1test_SOURCES) $(sha256test_SOURCES) \
+	$(sha512test_SOURCES) $(shatest_SOURCES) $(ssltest_SOURCES) \
+	$(timingsafe_SOURCES) $(utf8test_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -830,6 +837,9 @@ rc4test_LDADD = $(top_builddir)/ssl/libssl.la \
 rmdtest_SOURCES = rmdtest.c
 rmdtest_LDADD = $(top_builddir)/ssl/libssl.la \
 	$(top_builddir)/crypto/libcrypto.la
+salsa20test_SOURCES = salsa20test.c
+salsa20test_LDADD = $(top_builddir)/ssl/libssl.la \
+	$(top_builddir)/crypto/libcrypto.la
 sha1test_SOURCES = sha1test.c
 sha1test_LDADD = $(top_builddir)/ssl/libssl.la \
 	$(top_builddir)/crypto/libcrypto.la
@@ -1044,6 +1054,10 @@ rmdtest$(EXEEXT): $(rmdtest_OBJECTS) $(rmdtest_DEPENDENCIES) $(EXTRA_rmdtest_DEP
 	@rm -f rmdtest$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(rmdtest_OBJECTS) $(rmdtest_LDADD) $(LIBS)
 
+salsa20test$(EXEEXT): $(salsa20test_OBJECTS) $(salsa20test_DEPENDENCIES) $(EXTRA_salsa20test_DEPENDENCIES) 
+	@rm -f salsa20test$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(salsa20test_OBJECTS) $(salsa20test_LDADD) $(LIBS)
+
 sha1test$(EXEEXT): $(sha1test_OBJECTS) $(sha1test_DEPENDENCIES) $(EXTRA_sha1test_DEPENDENCIES) 
 	@rm -f sha1test$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(sha1test_OBJECTS) $(sha1test_LDADD) $(LIBS)
@@ -1116,6 +1130,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rc2test.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rc4test.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rmdtest.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/salsa20test.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sha1test.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sha256test.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sha512test.Po@am__quote@
@@ -1567,6 +1582,13 @@ rc4test.log: rc4test$(EXEEXT)
 rmdtest.log: rmdtest$(EXEEXT)
 	@p='rmdtest$(EXEEXT)'; \
 	b='rmdtest'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+salsa20test.log: salsa20test$(EXEEXT)
+	@p='salsa20test$(EXEEXT)'; \
+	b='salsa20test'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
