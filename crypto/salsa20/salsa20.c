@@ -19,3 +19,22 @@
 #include <openssl/salsa20.h>
 
 #include "salsa20-merged.c"
+
+void
+Salsa20_set_key(Salsa20_ctx *ctx, const unsigned char *key, uint32_t keybits)
+{
+	salsa20_keysetup((salsa20_ctx *)ctx, key, keybits);
+}
+
+void
+Salsa20_set_iv(Salsa20_ctx *ctx, const unsigned char *iv)
+{
+	salsa20_ivsetup((salsa20_ctx *)ctx, iv);
+}
+
+void
+Salsa20(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
+    size_t len)
+{
+	salsa20_encrypt_bytes((salsa20_ctx *)ctx, in, out, (uint32_t)len);
+}

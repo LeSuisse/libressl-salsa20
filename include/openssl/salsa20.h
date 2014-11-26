@@ -29,6 +29,16 @@
 extern "C" {
 #endif
 
+typedef struct {
+	unsigned int input[16];
+} Salsa20_ctx;
+
+void Salsa20_set_key(Salsa20_ctx *ctx, const unsigned char *key,
+    unsigned int keybits);
+void Salsa20_set_iv(Salsa20_ctx *ctx, const unsigned char *iv);
+void Salsa20(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
+    size_t len);
+
 #ifdef  __cplusplus
 }
 #endif
