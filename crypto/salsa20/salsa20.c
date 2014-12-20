@@ -42,9 +42,30 @@ Salsa20_set_counter(Salsa20_ctx *ctx, unsigned char *counter)
 	ctx->available = 0;
 }
 
-void
+inline void
+Salsa20_8(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
+    size_t len)
+{
+	Salsa20_rounds(ctx, out, in, len, 8);
+}
+
+inline void
+Salsa20_12(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
+    size_t len)
+{
+	Salsa20_rounds(ctx, out, in, len, 12);
+}
+
+inline void
 Salsa20(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
     size_t len)
+{
+	Salsa20_rounds(ctx, out, in, len, 20);
+}
+
+void
+Salsa20_rounds(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
+    size_t len, const uint8_t rounds)
 {
 	unsigned char *k;
 	size_t l;
@@ -58,5 +79,5 @@ Salsa20(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
 		ctx->available -= l;
 		len -= l;
 	}
-	salsa20_encrypt_bytes((salsa20_ctx *)ctx, in, out, (uint32_t)len);
+	salsa20_encrypt_bytes((salsa20_ctx *)ctx, in, out, (uint32_t)len, rounds);
 }

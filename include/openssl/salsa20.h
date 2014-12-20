@@ -24,6 +24,7 @@
 #endif
 
 #include <stddef.h>
+#include <stdint.h>
 
 #ifdef  __cplusplus
 extern "C" {
@@ -36,12 +37,18 @@ typedef struct {
 } Salsa20_ctx;
 
 void Salsa20_set_key(Salsa20_ctx *ctx, const unsigned char *key,
-    unsigned int keybits);
+    uint32_t keybits);
 void Salsa20_set_iv(Salsa20_ctx *ctx, const unsigned char *iv,
     unsigned char *counter);
 void Salsa20_set_counter(Salsa20_ctx *ctx, unsigned char *counter);
+void Salsa20_8(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
+    size_t len);
+void Salsa20_12(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
+    size_t len);
 void Salsa20(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
     size_t len);
+void Salsa20_rounds(Salsa20_ctx *ctx, unsigned char *out, const unsigned char *in,
+    size_t len, const uint8_t rounds);
 
 #ifdef  __cplusplus
 }

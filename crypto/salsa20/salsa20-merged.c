@@ -29,7 +29,7 @@ static inline void salsa20_ivsetup(struct salsa20_ctx *x, const u_char *iv,
 static inline void salsa20_set_counter(struct salsa20_ctx *x, u_char *ctr)
     __attribute__((__bounded__(__minbytes__, 3, CHACHA_CTRLEN)));
 static inline void salsa20_encrypt_bytes(struct salsa20_ctx *x, const u_char *m,
-    u_char *c, u_int bytes)
+    u_char *c, u_int bytes, const unsigned char rounds)
     __attribute__((__bounded__(__buffer__, 2, 4)))
     __attribute__((__bounded__(__buffer__, 3, 4)));
 
@@ -110,7 +110,8 @@ salsa20_set_counter(salsa20_ctx *x, u8* counter)
 }
 
 static inline void
-salsa20_encrypt_bytes(salsa20_ctx *x, const u8 *m, u8 *c, u32 bytes)
+salsa20_encrypt_bytes(salsa20_ctx *x, const u8 *m, u8 *c, u32 bytes,
+    const u8 rounds)
 {
 	u32 x0, x1, x2, x3, x4, x5, x6, x7;
 	u32 x8, x9, x10, x11, x12, x13, x14, x15;
@@ -164,7 +165,7 @@ salsa20_encrypt_bytes(salsa20_ctx *x, const u8 *m, u8 *c, u32 bytes)
 		x13 = j13;
 		x14 = j14;
 		x15 = j15;
-		for (i = 20; i > 0; i -= 2) {
+		for (i = rounds; i > 0; i -= 2) {
 			x4 = XOR(x4, ROTATE(PLUS(x0, x12), 7));
 			x8 = XOR(x8, ROTATE(PLUS(x4, x0), 9));
 			x12 = XOR(x12, ROTATE(PLUS(x8, x4),13));
