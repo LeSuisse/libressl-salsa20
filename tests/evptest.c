@@ -405,6 +405,12 @@ main(int argc, char **argv)
 				continue;
 			}
 #endif
+#ifdef OPENSSL_NO_SALSA20
+			if (strstr(cipher, "Salsa20") == cipher) {
+				fprintf(stdout, "Cipher disabled, skipping %s\n", cipher);
+				continue;
+			}
+#endif
 			fprintf(stderr, "Can't find %s\n",cipher);
 			exit(3);
 		}

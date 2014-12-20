@@ -4102,3 +4102,67 @@
 #define LN_chacha20		"chacha"
 #define NID_chacha20		937
 
+#define SN_gost89_ecb		"gost89-ecb"
+#define NID_gost89_ecb		938
+
+#define SN_gost89_cbc		"gost89-cbc"
+#define NID_gost89_cbc		939
+
+#define SN_salsa20		"Salsa20"
+#define LN_salsa20		"salsa20"
+#define NID_salsa20		950
+
+#define SN_salsa20_12		"Salsa20/12"
+#define LN_salsa20_12		"salsa20_12"
+#define NID_salsa20_12		951
+
+#define SN_salsa20_8		"Salsa20/8"
+#define LN_salsa20_8		"salsa20_8"
+#define NID_salsa20_8		952
+
+#define SN_tc26		"tc26"
+#define NID_tc26		940
+#define OBJ_tc26		OBJ_member_body,643L,7L,1L
+
+#define SN_id_tc26_gost3411_2012_256		"streebog256"
+#define LN_id_tc26_gost3411_2012_256		"GOST R 34.11-2012 (256 bit)"
+#define NID_id_tc26_gost3411_2012_256		941
+#define OBJ_id_tc26_gost3411_2012_256		OBJ_tc26,1L,2L,2L
+
+#define SN_id_tc26_gost3411_2012_512		"streebog512"
+#define LN_id_tc26_gost3411_2012_512		"GOST R 34-11-2012 (512 bit)"
+#define NID_id_tc26_gost3411_2012_512		942
+#define OBJ_id_tc26_gost3411_2012_512		OBJ_tc26,1L,2L,3L
+
+#define SN_id_tc26_gost_3410_2012_512_paramSetA		"id-tc26-gost-3410-2012-512-paramSetA"
+#define NID_id_tc26_gost_3410_2012_512_paramSetA		943
+#define OBJ_id_tc26_gost_3410_2012_512_paramSetA		OBJ_tc26,2L,1L,2L,1L
+
+#define SN_id_tc26_gost_3410_2012_512_paramSetB		"id-tc26-gost-3410-2012-512-paramSetB"
+#define NID_id_tc26_gost_3410_2012_512_paramSetB		944
+#define OBJ_id_tc26_gost_3410_2012_512_paramSetB		OBJ_tc26,2L,1L,2L,2L
+
+#define SN_id_tc26_gost_28147_param_Z		"id-tc26-gost-28147-param-Z"
+#define NID_id_tc26_gost_28147_param_Z		945
+#define OBJ_id_tc26_gost_28147_param_Z		OBJ_tc26,2L,5L,1L,1L
+
+#define SN_id_tc26_gost3410_2012_256		"id-tc26-gost3410-2012-256"
+#define LN_id_tc26_gost3410_2012_256		"GOST R 34.10-2012 (256 bit)"
+#define NID_id_tc26_gost3410_2012_256		946
+#define OBJ_id_tc26_gost3410_2012_256		OBJ_tc26,1L,1L,1L
+
+#define SN_id_tc26_gost3410_2012_512		"id-tc26-gost3410-2012-512"
+#define LN_id_tc26_gost3410_2012_512		"GOST R 34.10-2012 (512 bit)"
+#define NID_id_tc26_gost3410_2012_512		947
+#define OBJ_id_tc26_gost3410_2012_512		OBJ_tc26,1L,1L,2L
+
+#define SN_id_tc26_signwithdigest_gost3410_2012_256		"id-tc26-signwithdigest-gost3410-2012-256"
+#define LN_id_tc26_signwithdigest_gost3410_2012_256		"GOST R 34.11-2012 with GOST R 34.10-2012 (256 bit)"
+#define NID_id_tc26_signwithdigest_gost3410_2012_256		948
+#define OBJ_id_tc26_signwithdigest_gost3410_2012_256		OBJ_tc26,1L,3L,2L
+
+#define SN_id_tc26_signwithdigest_gost3410_2012_512		"id-tc26-signwithdigest-gost3410-2012-512"
+#define LN_id_tc26_signwithdigest_gost3410_2012_512		"GOST R 34.11-2012 with GOST R 34.10-2012 (512 bit)"
+#define NID_id_tc26_signwithdigest_gost3410_2012_512		949
+#define OBJ_id_tc26_signwithdigest_gost3410_2012_512		OBJ_tc26,1L,3L,3L
+

@@ -225,4 +225,10 @@ OpenSSL_add_all_ciphers(void)
 #ifndef OPENSSL_NO_CHACHA
 	EVP_add_cipher(EVP_chacha20());
 #endif
+
+#ifndef OPENSSL_NO_SALSA20
+	EVP_add_cipher(EVP_salsa20());
+	EVP_add_cipher(EVP_salsa20_12());
+	EVP_add_cipher(EVP_salsa20_8());
+#endif
 }

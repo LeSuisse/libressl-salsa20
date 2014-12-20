@@ -62,12 +62,12 @@
  * [including the GNU Public Licence.]
  */
 
-#define NUM_NID 938
-#define NUM_SN 931
-#define NUM_LN 931
-#define NUM_OBJ 874
+#define NUM_NID 953
+#define NUM_SN 946
+#define NUM_LN 946
+#define NUM_OBJ 884
 
-static const unsigned char lvalues[6119]={
+static const unsigned char lvalues[6199]={
 0x2A,0x86,0x48,0x86,0xF7,0x0D,               /* [  0] OBJ_rsadsi */
 0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,          /* [  6] OBJ_pkcs */
 0x2A,0x86,0x48,0x86,0xF7,0x0D,0x02,0x02,     /* [ 13] OBJ_md2 */
@@ -936,6 +936,16 @@ static const unsigned char lvalues[6119]={
 0x2B,0x24,0x03,0x03,0x02,0x08,0x01,0x01,0x0D,/* [6090] OBJ_brainpoolP512r1 */
 0x2B,0x24,0x03,0x03,0x02,0x08,0x01,0x01,0x0E,/* [6099] OBJ_brainpoolP512t1 */
 0x2A,0x81,0x7A,0x01,0x81,0x5F,0x65,0x82,0x00,0x01,/* [6108] OBJ_FRP256v1 */
+0x2A,0x85,0x03,0x07,0x01,                    /* [6118] OBJ_tc26 */
+0x2A,0x85,0x03,0x07,0x01,0x01,0x02,0x02,     /* [6123] OBJ_id_tc26_gost3411_2012_256 */
+0x2A,0x85,0x03,0x07,0x01,0x01,0x02,0x03,     /* [6131] OBJ_id_tc26_gost3411_2012_512 */
+0x2A,0x85,0x03,0x07,0x01,0x02,0x01,0x02,0x01,/* [6139] OBJ_id_tc26_gost_3410_2012_512_paramSetA */
+0x2A,0x85,0x03,0x07,0x01,0x02,0x01,0x02,0x02,/* [6148] OBJ_id_tc26_gost_3410_2012_512_paramSetB */
+0x2A,0x85,0x03,0x07,0x01,0x02,0x05,0x01,0x01,/* [6157] OBJ_id_tc26_gost_28147_param_Z */
+0x2A,0x85,0x03,0x07,0x01,0x01,0x01,0x01,     /* [6166] OBJ_id_tc26_gost3410_2012_256 */
+0x2A,0x85,0x03,0x07,0x01,0x01,0x01,0x02,     /* [6174] OBJ_id_tc26_gost3410_2012_512 */
+0x2A,0x85,0x03,0x07,0x01,0x01,0x03,0x02,     /* [6182] OBJ_id_tc26_signwithdigest_gost3410_2012_256 */
+0x2A,0x85,0x03,0x07,0x01,0x01,0x03,0x03,     /* [6190] OBJ_id_tc26_signwithdigest_gost3410_2012_512 */
 };
 
 static const ASN1_OBJECT nid_objs[NUM_NID]={
@@ -2448,6 +2458,34 @@ static const ASN1_OBJECT nid_objs[NUM_NID]={
 	&(lvalues[6099]),0},
 {"FRP256v1","FRP256v1",NID_FRP256v1,10,&(lvalues[6108]),0},
 {"ChaCha","chacha",NID_chacha20,0,NULL,0},
+{"gost89-ecb","gost89-ecb",NID_gost89_ecb,0,NULL,0},
+{"gost89-cbc","gost89-cbc",NID_gost89_cbc,0,NULL,0},
+{"tc26","tc26",NID_tc26,5,&(lvalues[6118]),0},
+{"streebog256","GOST R 34.11-2012 (256 bit)",
+	NID_id_tc26_gost3411_2012_256,8,&(lvalues[6123]),0},
+{"streebog512","GOST R 34-11-2012 (512 bit)",
+	NID_id_tc26_gost3411_2012_512,8,&(lvalues[6131]),0},
+{"id-tc26-gost-3410-2012-512-paramSetA",
+	"id-tc26-gost-3410-2012-512-paramSetA",
+	NID_id_tc26_gost_3410_2012_512_paramSetA,9,&(lvalues[6139]),0},
+{"id-tc26-gost-3410-2012-512-paramSetB",
+	"id-tc26-gost-3410-2012-512-paramSetB",
+	NID_id_tc26_gost_3410_2012_512_paramSetB,9,&(lvalues[6148]),0},
+{"id-tc26-gost-28147-param-Z","id-tc26-gost-28147-param-Z",
+	NID_id_tc26_gost_28147_param_Z,9,&(lvalues[6157]),0},
+{"id-tc26-gost3410-2012-256","GOST R 34.10-2012 (256 bit)",
+	NID_id_tc26_gost3410_2012_256,8,&(lvalues[6166]),0},
+{"id-tc26-gost3410-2012-512","GOST R 34.10-2012 (512 bit)",
+	NID_id_tc26_gost3410_2012_512,8,&(lvalues[6174]),0},
+{"id-tc26-signwithdigest-gost3410-2012-256",
+	"GOST R 34.11-2012 with GOST R 34.10-2012 (256 bit)",
+	NID_id_tc26_signwithdigest_gost3410_2012_256,8,&(lvalues[6182]),0},
+{"id-tc26-signwithdigest-gost3410-2012-512",
+	"GOST R 34.11-2012 with GOST R 34.10-2012 (512 bit)",
+	NID_id_tc26_signwithdigest_gost3410_2012_512,8,&(lvalues[6190]),0},
+{"Salsa20","salsa20",NID_salsa20,0,NULL,0},
+{"Salsa20/12","salsa20_12",NID_salsa20_12,0,NULL,0},
+{"Salsa20/8","salsa20_8",NID_salsa20_8,0,NULL,0},
 };
 
 static const unsigned int sn_objs[NUM_SN]={
@@ -2634,6 +2672,9 @@ static const unsigned int sn_objs[NUM_SN]={
 100,	/* "SN" */
 16,	/* "ST" */
 143,	/* "SXNetID" */
+950,	/* "Salsa20" */
+951,	/* "Salsa20/12" */
+952,	/* "Salsa20/8" */
 458,	/* "UID" */
  0,	/* "UNDEF" */
 11,	/* "X500" */
@@ -2777,7 +2818,9 @@ static const unsigned int sn_objs[NUM_SN]={
 811,	/* "gost2001" */
 851,	/* "gost2001cc" */
 813,	/* "gost89" */
+939,	/* "gost89-cbc" */
 814,	/* "gost89-cnt" */
+938,	/* "gost89-ecb" */
 812,	/* "gost94" */
 850,	/* "gost94cc" */
 797,	/* "hmacWithMD5" */
@@ -3031,6 +3074,13 @@ static const unsigned int sn_objs[NUM_SN]={
 194,	/* "id-smime-spq" */
 250,	/* "id-smime-spq-ets-sqt-unotice" */
 249,	/* "id-smime-spq-ets-sqt-uri" */
+945,	/* "id-tc26-gost-28147-param-Z" */
+943,	/* "id-tc26-gost-3410-2012-512-paramSetA" */
+944,	/* "id-tc26-gost-3410-2012-512-paramSetB" */
+946,	/* "id-tc26-gost3410-2012-256" */
+947,	/* "id-tc26-gost3410-2012-512" */
+948,	/* "id-tc26-signwithdigest-gost3410-2012-256" */
+949,	/* "id-tc26-signwithdigest-gost3410-2012-512" */
 676,	/* "identified-organization" */
 461,	/* "info" */
 748,	/* "inhibitAnyPolicy" */
@@ -3336,6 +3386,8 @@ static const unsigned int sn_objs[NUM_SN]={
 454,	/* "simpleSecurityObject" */
 496,	/* "singleLevelQuality" */
 387,	/* "snmpv2" */
+941,	/* "streebog256" */
+942,	/* "streebog512" */
 660,	/* "street" */
 85,	/* "subjectAltName" */
 769,	/* "subjectDirectoryAttributes" */
@@ -3346,6 +3398,7 @@ static const unsigned int sn_objs[NUM_SN]={
 890,	/* "supportedAlgorithms" */
 874,	/* "supportedApplicationContext" */
 402,	/* "targetInformation" */
+940,	/* "tc26" */
 864,	/* "telephoneNumber" */
 866,	/* "teletexTerminalIdentifier" */
 920,	/* "teletrust" */
@@ -3410,10 +3463,16 @@ static const unsigned int ln_objs[NUM_LN]={
 815,	/* "GOST 28147-89 MAC" */
 851,	/* "GOST 34.10-2001 Cryptocom" */
 850,	/* "GOST 34.10-94 Cryptocom" */
+942,	/* "GOST R 34-11-2012 (512 bit)" */
 811,	/* "GOST R 34.10-2001" */
 817,	/* "GOST R 34.10-2001 DH" */
+946,	/* "GOST R 34.10-2012 (256 bit)" */
+947,	/* "GOST R 34.10-2012 (512 bit)" */
 812,	/* "GOST R 34.10-94" */
 818,	/* "GOST R 34.10-94 DH" */
+941,	/* "GOST R 34.11-2012 (256 bit)" */
+948,	/* "GOST R 34.11-2012 with GOST R 34.10-2012 (256 bit)" */
+949,	/* "GOST R 34.11-2012 with GOST R 34.10-2012 (512 bit)" */
 809,	/* "GOST R 34.11-94" */
 816,	/* "GOST R 34.11-94 PRF" */
 807,	/* "GOST R 34.11-94 with GOST R 34.10-2001" */
@@ -3722,7 +3781,9 @@ static const unsigned int ln_objs[NUM_LN]={
 509,	/* "generationQualifier" */
 601,	/* "generic cryptogram" */
 99,	/* "givenName" */
+939,	/* "gost89-cbc" */
 814,	/* "gost89-cnt" */
+938,	/* "gost89-ecb" */
 855,	/* "hmac" */
 780,	/* "hmac-md5" */
 781,	/* "hmac-sha1" */
@@ -3950,6 +4011,9 @@ static const unsigned int ln_objs[NUM_LN]={
 194,	/* "id-smime-spq" */
 250,	/* "id-smime-spq-ets-sqt-unotice" */
 249,	/* "id-smime-spq-ets-sqt-uri" */
+945,	/* "id-tc26-gost-28147-param-Z" */
+943,	/* "id-tc26-gost-3410-2012-512-paramSetA" */
+944,	/* "id-tc26-gost-3410-2012-512-paramSetB" */
 34,	/* "idea-cbc" */
 35,	/* "idea-cfb" */
 36,	/* "idea-ecb" */
@@ -4094,6 +4158,9 @@ static const unsigned int ln_objs[NUM_LN]={
 124,	/* "run length compression" */
 482,	/* "sOARecord" */
 155,	/* "safeContentsBag" */
+950,	/* "salsa20" */
+951,	/* "salsa20_12" */
+952,	/* "salsa20_8" */
 291,	/* "sbgp-autonomousSysNum" */
 290,	/* "sbgp-ipAddrBlock" */
 292,	/* "sbgp-routerIdentifier" */
@@ -4279,6 +4346,7 @@ static const unsigned int ln_objs[NUM_LN]={
 890,	/* "supportedAlgorithms" */
 874,	/* "supportedApplicationContext" */
 100,	/* "surname" */
+940,	/* "tc26" */
 864,	/* "telephoneNumber" */
 866,	/* "teletexTerminalIdentifier" */
 920,	/* "teletrust" */
@@ -4556,6 +4624,7 @@ static const unsigned int obj_objs[NUM_OBJ]={
 639,	/* OBJ_set_brand_JCB                2 23 42 8 35 */
 805,	/* OBJ_cryptopro                    1 2 643 2 2 */
 806,	/* OBJ_cryptocom                    1 2 643 2 9 */
+940,	/* OBJ_tc26                         1 2 643 7 1 */
 184,	/* OBJ_X9_57                        1 2 840 10040 */
 405,	/* OBJ_ansi_X9_62                   1 2 840 10045 */
 389,	/* OBJ_Enterprises                  1 3 6 1 4 1 */
@@ -4733,6 +4802,12 @@ static const unsigned int obj_objs[NUM_OBJ]={
 851,	/* OBJ_id_GostR3410_2001_cc         1 2 643 2 9 1 5 4 */
 849,	/* OBJ_id_Gost28147_89_cc           1 2 643 2 9 1 6 1 */
 854,	/* OBJ_id_GostR3410_2001_ParamSet_cc 1 2 643 2 9 1 8 1 */
+946,	/* OBJ_id_tc26_gost3410_2012_256    1 2 643 7 1 1 1 1 */
+947,	/* OBJ_id_tc26_gost3410_2012_512    1 2 643 7 1 1 1 2 */
+941,	/* OBJ_id_tc26_gost3411_2012_256    1 2 643 7 1 1 2 2 */
+942,	/* OBJ_id_tc26_gost3411_2012_512    1 2 643 7 1 1 2 3 */
+948,	/* OBJ_id_tc26_signwithdigest_gost3410_2012_256 1 2 643 7 1 1 3 2 */
+949,	/* OBJ_id_tc26_signwithdigest_gost3410_2012_512 1 2 643 7 1 1 3 3 */
 186,	/* OBJ_pkcs1                        1 2 840 113549 1 1 */
 27,	/* OBJ_pkcs3                        1 2 840 113549 1 3 */
 187,	/* OBJ_pkcs5                        1 2 840 113549 1 5 */
@@ -4900,6 +4975,9 @@ static const unsigned int obj_objs[NUM_OBJ]={
 439,	/* OBJ_pilotAttributeSyntax         0 9 2342 19200300 100 3 */
 440,	/* OBJ_pilotObjectClass             0 9 2342 19200300 100 4 */
 441,	/* OBJ_pilotGroups                  0 9 2342 19200300 100 10 */
+943,	/* OBJ_id_tc26_gost_3410_2012_512_paramSetA 1 2 643 7 1 2 1 2 1 */
+944,	/* OBJ_id_tc26_gost_3410_2012_512_paramSetB 1 2 643 7 1 2 1 2 2 */
+945,	/* OBJ_id_tc26_gost_28147_param_Z   1 2 643 7 1 2 5 1 1 */
 108,	/* OBJ_cast5_cbc                    1 2 840 113533 7 66 10 */
 112,	/* OBJ_pbeWithMD5AndCast5_CBC       1 2 840 113533 7 66 12 */
 782,	/* OBJ_id_PasswordBasedMAC          1 2 840 113533 7 66 13 */

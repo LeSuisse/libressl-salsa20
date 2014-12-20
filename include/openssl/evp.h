@@ -803,6 +803,11 @@ const EVP_CIPHER *EVP_camellia_256_ofb(void);
 #ifndef OPENSSL_NO_CHACHA
 const EVP_CIPHER *EVP_chacha20(void);
 #endif
+#ifndef OPENSSL_NO_SALSA20
+const EVP_CIPHER *EVP_salsa20(void);
+const EVP_CIPHER *EVP_salsa20_12(void);
+const EVP_CIPHER *EVP_salsa20_8(void);
+#endif
 
 void OPENSSL_add_all_algorithms_noconf(void);
 void OPENSSL_add_all_algorithms_conf(void);
