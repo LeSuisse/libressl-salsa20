@@ -10,16 +10,24 @@ Public domain.
 
 #define SALSA20_MINKEYLEN 	16
 #define SALSA20_NONCELEN	8
+#define SALSA20_CTRLEN		8
+#define SALSA20_BLOCKLEN	64
 
 struct salsa20_ctx {
 	u_int input[16];
+	uint8_t keystream[SALSA20_BLOCKLEN];
+	size_t available;
 };
 
 static inline void salsa20_keysetup(struct salsa20_ctx *x, const u_char *k,
     u_int kbits)
     __attribute__((__bounded__(__minbytes__, 2, SALSA20_MINKEYLEN)));
-static inline void salsa20_ivsetup(struct salsa20_ctx *x, const u_char *iv)
-    __attribute__((__bounded__(__minbytes__, 2, SALSA20_NONCELEN)));
+static inline void salsa20_ivsetup(struct salsa20_ctx *x, const u_char *iv,
+    u_char *ctr)
+    __attribute__((__bounded__(__minbytes__, 2, SALSA20_NONCELEN)))
+    __attribute__((__bounded__(__minbytes__, 3, CHACHA_CTRLEN)));
+static inline void salsa20_set_counter(struct salsa20_ctx *x, u_char *ctr)
+    __attribute__((__bounded__(__minbytes__, 3, CHACHA_CTRLEN)));
 static inline void salsa20_encrypt_bytes(struct salsa20_ctx *x, const u_char *m,
     u_char *c, u_int bytes)
     __attribute__((__bounded__(__buffer__, 2, 4)))
@@ -86,12 +94,19 @@ salsa20_keysetup(salsa20_ctx *x, const u8 *k, u32 kbits)
 }
 
 static inline void
-salsa20_ivsetup(salsa20_ctx *x, const u8 *iv)
+salsa20_ivsetup(salsa20_ctx *x, const u8 *iv, u8* counter)
 {
 	x->input[6] = U8TO32_LITTLE(iv + 0);
 	x->input[7] = U8TO32_LITTLE(iv + 4);
-	x->input[8] = 0;
-	x->input[9] = 0;
+	salsa20_set_counter(x, counter);
+}
+
+static inline void
+salsa20_set_counter(salsa20_ctx *x, u8* counter)
+{
+	//x8 and x9 are a counter. This is a block cipher in CTR mode
+	x->input[8] = counter == NULL ? 0 : U8TO32_LITTLE(counter + 0);
+	x->input[9] = counter == NULL ? 0 : U8TO32_LITTLE(counter + 4);
 }
 
 static inline void
@@ -200,6 +215,25 @@ salsa20_encrypt_bytes(salsa20_ctx *x, const u8 *m, u8 *c, u32 bytes)
 		x14 = PLUS(x14, j14);
 		x15 = PLUS(x15, j15);
 
+		if (bytes < 64) {
+			U32TO8_LITTLE(x->keystream + 0, x0);
+			U32TO8_LITTLE(x->keystream + 4, x1);
+			U32TO8_LITTLE(x->keystream + 8, x2);
+			U32TO8_LITTLE(x->keystream + 12, x3);
+			U32TO8_LITTLE(x->keystream + 16, x4);
+			U32TO8_LITTLE(x->keystream + 20, x5);
+			U32TO8_LITTLE(x->keystream + 24, x6);
+			U32TO8_LITTLE(x->keystream + 28, x7);
+			U32TO8_LITTLE(x->keystream + 32, x8);
+			U32TO8_LITTLE(x->keystream + 36, x9);
+			U32TO8_LITTLE(x->keystream + 40, x10);
+			U32TO8_LITTLE(x->keystream + 44, x11);
+			U32TO8_LITTLE(x->keystream + 48, x12);
+			U32TO8_LITTLE(x->keystream + 52, x13);
+			U32TO8_LITTLE(x->keystream + 56, x14);
+			U32TO8_LITTLE(x->keystream + 60, x15);
+		}
+
 		x0 = XOR(x0, U8TO32_LITTLE(m + 0));
 		x1 = XOR(x1, U8TO32_LITTLE(m + 4));
 		x2 = XOR(x2, U8TO32_LITTLE(m + 8));
@@ -247,6 +281,7 @@ salsa20_encrypt_bytes(salsa20_ctx *x, const u8 *m, u8 *c, u32 bytes)
 			}
 			x->input[8] = j8;
 			x->input[9] = j9;
+			x->available = 64 - bytes;
 			return;
 		}
 		bytes -= 64;
