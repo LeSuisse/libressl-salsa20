@@ -182,6 +182,11 @@ FUNCTION functions[] = {
 #ifndef OPENSSL_NO_CHACHA
 	{ FUNC_TYPE_CIPHER, "chacha", enc_main },
 #endif
+#ifndef OPENSSL_NO_SALSA20
+	{ FUNC_TYPE_CIPHER, "salsa20", enc_main },
+	{ FUNC_TYPE_CIPHER, "salsa20-12", enc_main },
+	{ FUNC_TYPE_CIPHER, "salsa20-8", enc_main },
+#endif
 #ifndef OPENSSL_NO_DES
 	{ FUNC_TYPE_CIPHER, "des", enc_main },
 	{ FUNC_TYPE_CIPHER, "des3", enc_main },

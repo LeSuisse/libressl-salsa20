@@ -153,6 +153,9 @@
 #ifndef OPENSSL_NO_WHIRLPOOL
 #include <openssl/whrlpool.h>
 #endif
+#ifndef OPENSSL_NO_SALSA20
+#include <openssl/salsa20.h>
+#endif
 
 #include "./testdsa.h"
 #include "./testrsa.h"
@@ -171,7 +174,7 @@ pkey_print_message(const char *str, const char *str2,
 static void print_result(int alg, int run_no, int count, double time_used);
 static int do_multi(int multi);
 
-#define ALGOR_NUM	30
+#define ALGOR_NUM	33
 #define SIZE_NUM	5
 #define RSA_NUM		4
 #define DSA_NUM		3
@@ -186,7 +189,8 @@ static const char *names[ALGOR_NUM] = {
 	"aes-128 cbc", "aes-192 cbc", "aes-256 cbc",
 	"camellia-128 cbc", "camellia-192 cbc", "camellia-256 cbc",
 	"evp", "sha256", "sha512", "whirlpool",
-"aes-128 ige", "aes-192 ige", "aes-256 ige", "ghash"};
+	"aes-128 ige", "aes-192 ige", "aes-256 ige", "ghash",
+	"salsa20", "salsa20-12", "salsa-8"};
 static double results[ALGOR_NUM][SIZE_NUM];
 static int lengths[SIZE_NUM] = {16, 64, 256, 1024, 8 * 1024};
 static double rsa_results[RSA_NUM][2];
@@ -361,6 +365,9 @@ speed_main(int argc, char **argv)
 #define D_IGE_192_AES   27
 #define D_IGE_256_AES   28
 #define D_GHASH		29
+#define D_SALSA20   30
+#define D_SALSA20_12    31
+#define D_SALSA20_8 32
 	double d = 0.0;
 	long c[ALGOR_NUM][SIZE_NUM];
 #define	R_DSA_512	0
@@ -669,6 +676,15 @@ speed_main(int argc, char **argv)
 			doit[D_IGE_256_AES] = 1;
 		else
 #endif
+#ifndef OPENSSL_NO_SALSA20
+		if (strcmp(*argv, "salsa20") == 0)
+			doit[D_SALSA20] = 1;
+		else if (strcmp(*argv, "salsa20-12") == 0)
+			doit[D_SALSA20_12] = 1;
+		else if (strcmp(*argv, "salsa20-8") == 0)
+			doit[D_SALSA20_8] = 1;
+		else
+#endif
 #ifndef OPENSSL_NO_CAMELLIA
 		if (strcmp(*argv, "camellia-128-cbc") == 0)
 			doit[D_CBC_128_CML] = 1;
@@ -909,6 +925,10 @@ speed_main(int argc, char **argv)
 #ifndef OPENSSL_NO_AES
 			BIO_printf(bio_err, "aes-128-cbc aes-192-cbc aes-256-cbc ");
 			BIO_printf(bio_err, "aes-128-ige aes-192-ige aes-256-ige ");
+#endif
+#ifndef OPENSSL_NO_SALSA20
+			BIO_printf(bio_err, "\n");
+			BIO_printf(bio_err, "salsa20 salsa20-12 salsa20-8 ");
 #endif
 #ifndef OPENSSL_NO_CAMELLIA
 			BIO_printf(bio_err, "\n");
@@ -1310,6 +1330,47 @@ speed_main(int argc, char **argv)
 			print_result(D_GHASH, j, count, d);
 		}
 		CRYPTO_gcm128_release(ctx);
+	}
+#endif
+#ifndef OPENSSL_NO_SALSA20
+	if (doit[D_SALSA20]) {
+		Salsa20_ctx ctx;
+		Salsa20_set_key(&ctx, key16, 128);
+		Salsa20_set_iv(&ctx, iv, NULL);
+		for (j = 0; j < SIZE_NUM; j++) {
+			print_message(names[D_SALSA20], c[D_SALSA20][j], lengths[j]);
+			Time_F(START);
+			for (count = 0, run = 1; COND(c[D_SALSA20][j]); count++)
+				Salsa20(&ctx, buf, buf, lengths[j]);
+			d = Time_F(STOP);
+			print_result(D_SALSA20, j, count, d);
+		}
+	}
+	if (doit[D_SALSA20_12]) {
+		Salsa20_ctx ctx;
+		Salsa20_set_key(&ctx, key16, 128);
+		Salsa20_set_iv(&ctx, iv, NULL);
+		for (j = 0; j < SIZE_NUM; j++) {
+			print_message(names[D_SALSA20_12], c[D_SALSA20_12][j], lengths[j]);
+			Time_F(START);
+			for (count = 0, run = 1; COND(c[D_SALSA20_12][j]); count++)
+				Salsa20_12(&ctx, buf, buf, lengths[j]);
+			d = Time_F(STOP);
+			print_result(D_SALSA20_12, j, count, d);
+		}
+	}
+	if (doit[D_SALSA20_8]) {
+		Salsa20_ctx ctx;
+		Salsa20_set_key(&ctx, key16, 128);
+		Salsa20_set_iv(&ctx, iv, NULL);
+		for (j = 0; j < SIZE_NUM; j++) {
+			print_message(names[D_SALSA20_8], c[D_SALSA20_8][j], lengths[j]);
+			Time_F(START);
+			for (count = 0, run = 1; COND(c[D_SALSA20_8][j]); count++)
+				Salsa20_8(&ctx, buf, buf, lengths[j]);
+			d = Time_F(STOP);
+			print_result(D_SALSA20_8, j, count, d);
+		}
 	}
 #endif
 #ifndef OPENSSL_NO_CAMELLIA
