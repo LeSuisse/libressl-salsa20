@@ -190,7 +190,7 @@ static const char *names[ALGOR_NUM] = {
 	"camellia-128 cbc", "camellia-192 cbc", "camellia-256 cbc",
 	"evp", "sha256", "sha512", "whirlpool",
 	"aes-128 ige", "aes-192 ige", "aes-256 ige", "ghash",
-	"salsa20", "salsa20-12", "salsa-8"};
+	"salsa20", "salsa20-12", "salsa20-8"};
 static double results[ALGOR_NUM][SIZE_NUM];
 static int lengths[SIZE_NUM] = {16, 64, 256, 1024, 8 * 1024};
 static double rsa_results[RSA_NUM][2];
